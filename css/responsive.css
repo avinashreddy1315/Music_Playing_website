@@ -1,0 +1,167 @@
+@media (max-width: 1350px) {
+    .left{
+        position: relative;
+        background-color: black;
+        left: -150%;
+        transition: all 0.5s ease-out;
+        z-index: 2;
+        width: 370px;
+        
+    }
+
+    .right{
+        width: 98vw;
+        position: absolute;
+    }
+
+    .chevron-buttons{
+        display: none;
+    }
+    
+    #hamburger-btn{
+        display: block;
+    }
+
+    .playerbar{
+        width: 97%;
+        
+    }
+
+    .seekbar{
+        
+        width: 96%;
+        
+    }
+
+    .close-btn{
+        display: block;
+    }
+
+    .ff, .footer-buttons, .footer-list{
+        
+        flex-wrap: wrap;
+    }
+
+    .footer-list{
+        gap: 40px;
+    }
+
+
+}
+
+
+
+
+
+
+@media (max-width: 700px){
+    .seekbar{
+        
+        width: 93%;
+        
+    }
+
+    .songinfo{
+        
+        width: 100%;
+        text-align: center;
+        
+
+    }
+
+    .songtime{
+        font-size: 17px;
+    }
+
+    .songbuttons{
+        gap: 10px;
+        
+    }
+    
+
+    .card{
+        width: 90vw;
+    }
+
+
+    .playerbarin{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+
+@media (max-width: 500px){
+   
+
+
+    .playerbar{
+        padding: 25px 10px;
+        padding-top: 0px;
+        width: 93%;
+    
+    }
+
+
+    .seekbar{
+        
+        width: 90%;
+        
+    }
+
+    .cardcontainer{
+        justify-content: center;
+    }
+
+    .spotify-playlist .card {
+        width: 350px;
+        height: 450px;
+    }
+
+    .card img {
+        padding-bottom: 10px;
+    }
+
+    .card p{
+        font-size: 20px;
+    }
+    
+    .card h5{
+        font-size: 24px;
+        
+    }
+
+    .play-button{
+       
+        width: 50px;
+        height: 50px;
+        
+        
+    }
+
+    .info div{
+        word-break: break-all;
+    }
+
+
+    
+        
+
+   
+}
+
+@media (max-width: 1000px){
+    .vv{
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .songinfo{
+        width: 140px;
+    }
+
+    
+}

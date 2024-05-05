@@ -1,0 +1,244 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.left{
+    width: 25%;
+  
+}
+
+.home{
+    background-color: #121212;
+    border: none;
+    border-radius: 10px;
+    padding-left: 25px;
+    padding-top: 20px;
+    padding-bottom: 8px;
+    height: 170px;  
+}
+
+.home ul{
+    margin-left: -30px;
+}
+
+.home ul li{
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+
+
+#logo img{
+    filter: invert(1);
+}
+
+.library{
+    background-color: #121212;
+    border: none;
+    border-radius: 10px;
+    height: 715px;
+   
+}
+.library-head{
+    padding-left: 25px;
+    padding-top: 20px;
+    padding-bottom: 8px; 
+}
+
+
+/*tooltip styling */
+
+.tool{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    color: rgb(147, 146, 146);
+    background-color: transparent;
+    border: none;
+}
+
+.tool:hover{
+    color: white;
+}
+
+.tool .tooltiptext{
+    visibility: hidden;
+    width: 120%;
+    background-color: rgb(67, 66, 66);
+    color: white;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: -10%;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 3px;
+}
+
+.tool:hover .tooltiptext{
+    visibility: visible;
+}
+
+
+/*ends */
+
+
+/* styling for tooltip1 */
+.tool1{
+    position:relative;
+    display: inline-block;
+    cursor: pointer;
+    color: gray;
+    line-height: 40px;
+    text-align: center;
+    height: 40px;
+    width: 40px;
+    
+    
+}
+.tool1 .tooltiptext1{
+    visibility: hidden;
+    width: 10rem;
+    background-color: rgb(67, 66, 66);
+    color: gary;
+    color: white;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    bottom: 130%;
+    left: 0%;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 3px;
+    margin-left: -80px;
+    z-index: 2;
+}
+
+.tool1:hover .tooltiptext1{
+    visibility: visible;
+    
+    
+}
+
+.tool1:hover{
+    color: white;
+    border: none;
+    border-radius: 50%;
+    background-color: rgb(48, 47, 47);
+    transition: background-color 0.5s ease;
+}
+/*tooltips1 ends */
+
+
+.library-body{
+    
+    height: 450px;
+    overflow-y: auto;
+    margin-right: 10px;
+   
+}
+
+.tool1:hover .second-box-one{
+    background-color: red;
+}
+
+.sb-sub{
+    background-color: rgb(29, 29, 29);
+    border-radius: 10px;
+    height: 140px;
+    padding: 20px;
+}
+
+.one-p{
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.two-p{
+    font-size: 14px; 
+}
+
+.button-p{
+    font-weight: bold;
+    font-size: 14px;
+    width: 140px;
+    height: 35px;
+    border-radius: 50px;
+    background-color: white;
+    border: none;
+    box-shadow: none;
+    box-shadow: none;
+    transition: transform 0.3s ease;
+}
+
+.button-p:hover{
+    transform: scale(1.1);
+}
+
+
+.links-footer{
+    font-size: 11px;
+    gap: 13px;
+}
+
+.links-footer a{
+    color: gray;
+    text-decoration: none;
+}
+
+.btn{
+    border: 0.3px solid white;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 4px;
+    width: 100px;
+    height: 32px;
+    transition: transform 0.1s ease-out;
+}
+
+.btn:hover{
+    border: 1.5px solid white;
+    transform: scale(1.1)
+    
+    
+}
+
+.footer{
+    width: 99%;
+    z-index: 10;
+    height: 80px;
+    background-image: linear-gradient(90deg, #af2896, #509bf5);
+    position: fixed;
+    bottom: 0px;
+}
+
+.footer-text div{
+    font-size: 14px;
+}
+
+.btn-footer{
+    background-color: white;
+    border-radius: 50px;
+    font-size: 14px;
+    padding: 5px;
+    height: 45px;
+    width: 153px;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.btn-footer:hover{
+    transform: scale(1.1);
+}
+
+
+
+  
+
+
+
+

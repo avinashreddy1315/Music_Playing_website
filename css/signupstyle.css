@@ -1,0 +1,254 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+    
+    
+}
+
+body{
+    background-color: #121212;
+}
+
+.header img{
+    filter: invert();
+    margin: 30px;
+    width: 120px;
+}
+
+
+.sign-up-form{
+    width: 400px;
+    box-sizing: content-box;
+    height: 900px; 
+    position: absolute;
+    left: 40%;
+    top: 13%;
+    gap: 35px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
+.sign-up-form-email h1{
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+.form-input label{
+    font-weight: bolder;
+}
+
+.form-input input{
+    height: 60px;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid rgb(147, 146, 146);
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.form-input input:hover{
+    border: 1px solid white;
+}
+
+.form-input input:focus{
+    border: 2px solid white;
+    outline: none;
+}
+
+.form-input input::placeholder{
+    font-weight: bold;
+}
+
+.btn-next{
+    margin-top: -10px;
+    background-color: #1fdf64;
+    height: 60px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: center;
+    border: none;
+    outline: none;
+    color: black;
+}
+
+.seperator{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.seperator::before, .seperator::after{
+    content: '';
+    flex: 1;
+    border-bottom: 0.5px solid rgb(147, 146, 146);
+}
+
+.seperator:not(:empty)::before{
+    margin-right: .25rem;
+}
+
+.seperator:not(:empty)::after{
+    margin-left: .25rem;
+}
+
+.alt-sigin-btn button{
+    border: 1px solid rgb(147, 146, 146);
+    outline: none;
+    background: transparent;
+    border-radius: 30px;
+    height: 55px;
+    margin-bottom: 15px;
+    font-weight: bolder;
+    padding: 15px;
+    font-size: 19px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.alt-sigin-btn button span{
+    background-position-x: center;
+    background-position-y: center;
+    float: left;
+}
+
+.alt-sigin-btn button img{
+    width: 30px;
+    
+}
+
+.alt-sigin-btn button:hover{
+    border: 1px solid white;
+}
+.sign-in-link p{
+    color: rgb(147, 146, 146);
+    font-size: 19px;
+}
+
+.sign-in-link p a{
+    color: white;
+}
+
+
+.sign-up-form-password{
+    display: flex;
+    flex-direction: column;
+    display: none;
+    
+}
+
+
+
+#progress-bar{
+    width: 100%;
+    height: 15px;
+    border-radius: 10px;
+    background-color: rgb(147, 146, 146);
+    height: 5px;
+    
+    
+}
+
+#filler-bar{
+    
+    width: 0%;
+    height: 6px;
+    border-radius: 10px;
+    background-color: green;
+    transition: width 0.3s ease-in-out;
+}
+
+.password-form{
+    display: none;
+}
+
+.back_chevron{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+
+
+.back_chevron span{
+    color: rgb(147, 146, 146);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.back_chevron span:hover{
+    color: white;
+}
+
+
+.msg p{
+    line-height: 1;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.msg-1{
+    color: rgb(147, 146, 146) ;
+}
+
+
+.sign-up-form-yourself{
+    display: flex;
+    flex-direction: column;
+    display: none;
+   
+}
+
+.form-text{
+    margin-top: -5px;
+    color: rgb(147, 146, 146);
+    font-size: 15px;
+}
+
+.form-check-input{
+    width: 20px;
+    height: 10px
+}
+
+
+
+@media(max-width : 1000px){
+    .sign-up-form{
+        left: 30%;
+        
+    }
+}
+
+
+@media (max-width : 800px) {
+    .sign-up-form{
+        left: 25%;
+        
+    }
+}
+
+@media (max-width : 550px) {
+    .sign-up-form{
+        left: 10%;
+        
+    }
+}
+
+@media (max-width : 500px) {
+    .sign-up-form{
+        left: 0%;
+        margin: 10px;
+        
+    }
+    .header img{
+       
+        margin-left: 10px;
+        
+    }
+}

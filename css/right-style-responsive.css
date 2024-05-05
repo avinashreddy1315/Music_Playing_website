@@ -1,0 +1,101 @@
+@media (max-width: 1350px) {
+    .left{
+        position: absolute;
+        background-color: black;
+        left: -150%;
+        transition: all 0.5s ease-out;
+        z-index: 12;
+        width: 370px;
+        border-radius: 10px;
+        
+    }
+
+    .right{
+        
+        width: 99vw;
+
+    }
+
+    .chevron-buttons{
+        display: none;
+    }
+    
+    #hamburger-btn{
+        display: block;
+    }
+
+
+    .close-btn{
+        display: block;
+    }
+
+    .library{
+        height: 730px;
+        border-radius: 10px;
+    }
+
+}
+
+@media (max-width: 1000px){
+    .footer{
+        height: 100px;
+        border-radius: 10px;
+    }
+}
+
+
+@media (max-width: 500px){
+
+    .cardcontainer{
+        justify-content: center;
+    }
+
+    .spotify-playlist .card {
+        width: 350px;
+        height: 430px;
+    }
+
+    .card img {
+        padding-bottom: 10px;
+    }
+
+    .card p{
+        font-size: 20px;
+    }
+    
+    .card h5{
+        font-size: 24px;
+        
+    }
+
+    
+
+    .info div{
+        word-break: break-all;
+    }
+
+
+    .play-button{
+       
+        width: 50px;
+        height: 50px;
+        
+        
+    }
+
+
+    .footer{
+        height: 150px;
+        flex-direction: column;
+        margin-bottom: 15px;
+        gap: 15px;
+    }
+
+    .footer-text{
+        text-align: center;
+    }
+
+   
+}
+
+
