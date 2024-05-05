@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up - spotify</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/signupstyle.css">
+
+   <!--<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script> --> 
+
+</head>
+
+<body>
+    <div class="header">
+        <a href="../index.html"><img src="../images/logo.svg"></a>
+        
+    </div>
+    <div>
+
+        <div class="sign-up-form-email sign-up-form" id="email-form">
+            <div>
+                <h1>Sign up to start listening</h1>
+            </div>
+            <div class="d-flex flex-column form-input">
+                <label class="form-label">Email address</label>
+                <input id="email" type="text" placeholder="name@domain.com" onblur="checkemail()">
+                <p class="mt-1 text-danger fs-6" id="error-msg"></p>
+            </div>
+            <div>
+                <button class="btn-next w-100" onclick="next_step_to_password()"> Next </button>
+            </div>
+            <div class="seperator">or</div>
+
+            <div class="alt-sigin-btn d-flex flex-column ">
+                <button>
+                    <span>
+                        <img src="../images/google.svg">
+                    </span>
+                    Sign Up with Google
+                </button>
+                <button>
+                    <span>
+                        <img src="../images/facebook.svg">
+                    </span>
+                    Sign Up with Facebook
+                </button>
+                <button >
+                    <span>
+                        <img src="../images/apple.svg">
+                    </span>
+                    Sign Up with apple
+                </button>
+            </div>
+
+            <div class="seperator"></div>
+            <div class="sign-in-link text-center">
+                <p>Already have an account? <a href="./sign.html">Log in here</a></p>
+            </div>
+
+        </div>
+
+
+
+
+        <!-- sign form password-->
+        <div class="sign-up-form-password sign-up-form">
+            <div id="progress-bar" class="mb-5">
+                <div id="filler-bar"></div>
+            </div>
+            <div class="password-form">
+                <div class="d-flex flex-row mb-3" style="gap: 20px;">
+                    <div>
+                        <button class="back_chevron" id="back_chevron_password" onclick="goback()"><span class="bi bi-chevron-left"></span></button>
+                    </div>
+                    <div class="msg">
+                        <p class="msg-1">Step 2 of 3</p>
+                        <p class="msg-2">Create a password</p>
+                    </div>
+                </div>
+                <div class="d-flex flex-column form-input">
+                    <label class="form-label">Password</label>
+                    <input id="password" type="password" onblur="checkpassword()">
+                    <label class="form-label mt-4 "> your Password must contain at least</label>
+                    <div >
+                        <p>
+                            <img class="circle-check" src="../images/circle.svg">
+                            <span class="password_requirment">1 letter</span>
+                        </p>
+                        <p>
+                            <img class="circle-check" src="../images/circle.svg">
+                            <span class="password_requirment">1 number or special character (example: # ? ! &)</span>
+                        </p>
+                        <p>
+                            <img class="circle-check" src="../images/circle.svg">
+                            <span class="password_requirment">10 characters</span>
+                        </p>
+                    </div>
+
+                    <div>
+                        <button class="btn-next btn-next-to-yourself w-100 mt-3" onclick="next_step_to_yourself()"> Next </button>
+                    </div>
+                </div>
+
+                <div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <!-- sign up yourself form-->
+        <div class="sign-up-form-yourself sign-up-form">
+            <div class="yourself-form mt-5">
+                <div class="d-flex flex-row" style="gap: 20px;">
+                    <div>
+                        <button class="back_chevron"  id="back_chevron_yourself" onclick="gobacktopassword()"><span class="bi bi-chevron-left"></span></button>
+                    </div>
+                    <div class="msg">
+                        <p class="msg-1">Step 3 of 3</p>
+                        <p class="msg-2">Tell us about your self</p>
+                    </div>
+                </div>
+                <div class="d-flex flex-column form-input">
+                    <div class="mb-3">
+                        <label class="form-label">Name</label>
+                        <p class="form-text">This name will appear on your profile</p>
+                        <input id="name" type="text" onblur="checkname()">
+                        <p id="error-msg-name" class="text-danger"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Date of birth</label>
+                        <p class="form-text">Why do we need your date of birth?</p>
+                        <input id="dob" type="date">
+                    </div>
+
+                    
+                    <div>
+                        <button id="finaltbtn" class="btn-next w-100 mt-3">Sign Up</button>
+                    </div>
+                    <p class="mt-1 text-danger fs-6" id="error-msg2"></p>
+                </div>
+
+                <div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="./js/signup.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getDatabase, set, ref  } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+        
+
+        //firebase configuration
+        const firebaseConfig = {
+        apiKey: "AIzaSyDgOmT-Gj8-ZnjJOVzv_gWTFq7wYRVyCuU",
+        authDomain: "spotify-login-31135.firebaseapp.com",
+        projectId: "spotify-login-31135",
+        storageBucket: "spotify-login-31135.appspot.com",
+        messagingSenderId: "595968510652",
+        appId: "1:595968510652:web:d42d997b025f5303b85eb9"
+  };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase();
+        const auth = getAuth(app);
+
+
+
+        
+        let signup_btn = document.querySelector("#finaltbtn");
+
+        signup_btn.addEventListener("click", ()=>{
+            //lets get all our input fields
+            let em = document.querySelector("#email").value;
+            console.log(em);
+            let pass = document.querySelector("#password").value;
+            console.log(pass);
+            let name = document.querySelector("#name").value;
+            console.log(name);
+          
+
+            createUserWithEmailAndPassword(auth, em, pass)
+            .then((credentials) => {
+               /* set(ref(db, 'UsersAuthList/' + credentials.user.uid),{
+                    name: name
+                })
+                console.log("user created");
+                console.log(credentials); */
+                window.location.replace("main.html");
+               
+            })
+            .catch((error)=>{
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                console.log(errorMessage);
+                console.log(errorMessage.slice(22, -2).replaceAll('-', ' '));
+                document.getElementById("error-msg2").innerHTML = errorMessage.slice(22, -2).replaceAll('-', ' ');
+            })
+        });
+
+
+      </script>
+   
+
+    
+</body>
+
+</html>

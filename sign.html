@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Spotify</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/signupstyle.css">
+    <link rel="stylesheet" href="../css/signinstyle.css">
+
+ <!--  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script> --> 
+
+</head>
+
+<body>
+    <div class="for">
+        <div class="header">
+            <a href="../index.html"><img src="../images/logo.svg"></a>
+        </div>
+
+        <div class="sign-in-form">
+            <div class="form">
+                <div class="heading">
+                    <h1 class="text-center">Log in to Spotify</h1>
+                </div>
+                <div class="alt-sigin-btn d-flex flex-column">
+                    <button>
+                        <span>
+                            <img src="../images/google.svg">
+                        </span>
+                        Continue with Google
+                    </button>
+
+                    <button>
+                        <span>
+                            <img src="..//images/facebook.svg">
+                        </span>
+                        Continue with Facebook
+                    </button>
+
+
+                    <button>
+                        <span>
+                            <img src="../images/apple.svg">
+
+                        </span>
+                        Continue with apple
+                    </button>
+                </div>
+                <hr class="line">
+                <div class="em-pass-form d-flex flex-column m-auto">
+                    <div class="email_enter d-flex flex-column form_enter">
+                        <lable class="form-label">Email address</lable>
+                        <input id="email" class="email_pass_input"  type="text" onblur="checkemail()" >
+                        <P  class="mt-1 text-danger fs-6" id="error-msg1"></P>
+                    </div>
+                    <div class="pass_enter d-flex flex-column form_enter">
+                        <lable class="form-label">Password</lable>
+                        <input id="password" class="email_pass_input" type="password" onblur="checkpassword()"  >
+                        <P class=" mt-1 text-danger fs-6"  id="error-msg2"></P>
+                    </div>
+                   
+                    <div class="d-flex justify-content-center flex-column">
+                        <button id="sign-in-btn" class="btn-next "> Log In </button>
+                        <P  class=" mt-1 text-danger fs-6" id="error-msg3"></P>
+                    </div>
+
+                    <div class="d-flex justify-content-center " id="forgotpassword">
+                        <a href="#void"><p>Fotgot your password?</p></a>
+                    </div>
+
+                    <hr class="line">
+                    <div class="d-flex justify-content-center donthaveaccount">
+                        <p>Don't have an account?<a href="./signup.html">Sign up for Spotify</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="./js/signin.js"></script>
+
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getDatabase, get, ref, child  } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+        
+
+        //firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDgOmT-Gj8-ZnjJOVzv_gWTFq7wYRVyCuU",
+            authDomain: "spotify-login-31135.firebaseapp.com",
+            projectId: "spotify-login-31135",
+            storageBucket: "spotify-login-31135.appspot.com",
+            messagingSenderId: "595968510652",
+            appId: "1:595968510652:web:d42d997b025f5303b85eb9"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase();
+        const auth = getAuth(app);
+        const dbref = ref(db);
+
+
+
+        
+        let signin_btn = document.querySelector("#sign-in-btn");
+
+        signin_btn.addEventListener("click", ()=>{
+            document.querySelector("#error-msg3").style.display = "none";
+            //lets get all our input fields
+            let em = document.querySelector("#email").value;
+            console.log(em);
+            let pass = document.querySelector("#password").value;
+            console.log(pass);
+            
+
+            signInWithEmailAndPassword(auth, em, pass)
+            .then((credentials) => {
+               /* get(child(dbref, 'UsersAuthList/' + credentials.user.uid)).then((snapshot)=>{
+                    if(snapshot.exists){
+                        sessionStorage.setItem("user-info", JSON.stringify({
+                            Name : snapshot.val().Name
+                        }))
+                        sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
+                        
+                    }
+                }) 
+                console.log("user logined"); */
+               window.location.replace("main.html");
+                
+            })
+            .catch((error)=>{
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                var msg = errorMessage.slice(22, -2).replaceAll('-', ' ');
+                console.log(errorMessage);
+                console.log(msg);
+                document.querySelector("#error-msg3").innerHTML = msg;
+                document.querySelector("#error-msg3").style.display = "block";
+                document.querySelector("#error-msg3").style.display = "flex";
+            })
+        });
+
+
+      </script>
+</body>
+
+</html>

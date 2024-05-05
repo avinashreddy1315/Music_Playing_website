@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/left-footer-style.css">
+    <link rel="stylesheet" href="./css/right-style.css">
+    <link rel="stylesheet" href="./css/right-style-responsive.css">
+    
+
+
+
+    
+    
+    
+    
+
+    
+</head>
+
+<body class="bg-black text-white">
+    <div class="container-fluid p-0 d-flex">
+
+        <!-- sidebar top-->
+        <div class="left  m-2">
+            <div class="home">
+                <div id="logo" class="mb-3 d-flex justify-content-between">
+                    <img src="./images/logo.svg" alt="logo" width="35%">
+                    <button class="close-btn m-2"><span class=" fs-4 bi bi-x-lg"></span></button>
+                </div>
+                <div class="nav-bar ">
+                    <ul>
+                        <li class="fs-5 fw-bold"><span class="bi bi-house-fill pe-4"></span>Home</li>
+                        <li class="fs-5 fw-bold"><span class="bi bi-search pe-4"></span>Search</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!--sibedar library html-->
+            <div class="library mt-2">
+
+                <!-- library header html-->
+                <div class="library-head d-flex justify-content-between m-1">
+                    <div class="library-collections">
+                        <button class="tool fw-bold" onclick="show_library()"><span
+                                class="fs-4 bi-collection pe-3 "></span>Your Library<span class="tooltiptext">Collapse
+                                your Library</span>
+                    </div>
+                    </button>
+                    <div class="add">
+                        <span class="tool1 fs-3 bi bi-plus"><span class="tooltiptext1">Create Playlist or Floder</span>
+                    </div>
+                </div>
+
+
+                <!-- Library body html-->
+                <div class="library-body m-2" style="display: none;">
+                    <div class="second-box-one sb-sub mb-4 ">
+                        <div>
+                            <p class="one-p">Create your first playlist</p>
+                            <p class="two-p">It's easy, we'llhelp you</p>
+                        </div>
+                        <div>
+                            <button class="button-p">Create playlist</button>
+                        </div>
+                    </div>
+                    <div class="second-box-two sb-sub">
+                        <div>
+                            <p class="one-p">Let's find some podcaststo follow</p>
+                            <p class="two-p">We'll keep you updated on new episodes</p>
+                        </div>
+                        <div>
+                            <button class="button-p">Browse podcasts</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="library-body m-2" id="library-body-2" style="display: block;">
+                    <div class="second-box-one sb-sub mb-4 ">
+                        <div>
+                            <p class="one-p">Create your first playlist1</p>
+                            <p class="two-p">It's easy, we'llhelp you1</p>
+                        </div>
+                        <div>
+                            <button class="button-p">Create playlist1</button>
+                        </div>
+                    </div>
+                    <div class="second-box-two sb-sub">
+                        <div>
+                            <p class="one-p">Let's find some podcaststo follow1</p>
+                            <p class="two-p">We'll keep you updated on new episodes1</p>
+                        </div>
+                        <div>
+                            <button class="button-p" data-bs-toggle="modal" data-bs-target="#registermodal">Browse podcasts1</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- library footer html-->
+                <div class="library-footer ">
+                    <div class=" links-footer d-flex flex-wrap lex-row mt-4 p-4">
+                        <div><a href="void">Legal</a></div>
+                        <div><a href="void">Privacy center</a></div>
+                        <div><a href="void">Priacy Policy</a></div>
+                        <div><a href="void">Cookies</a></div>
+                        <div><a href="void">About Ads</a></div>
+                        <div><a href="void">Accessibilty</a></div>
+                        <div><a href="void">Notice at Collection</a></div>
+                        <div><a href="void">Your Privacy Choices</a><svg xmlns="http://www.w3.org/2000/svg"
+                                xml:space="preserve" viewBox="0 0 30 14" aria-labelledby="ccpa-svg-title"
+                                style="width: 25px; padding-left: 4px; padding-bottom: 4px;">
+                                <title id="ccpa-svg-title">California Consumer Privacy Act (CCPA) Opt-Out Icon</title>
+                                <path d="M7.4 12.8h6.8l3.1-11.6H7.4C4.2 1.2 1.6 3.8 1.6 7s2.6 5.8 5.8 5.8z"
+                                    style="fill-rule: evenodd; clip-rule: evenodd; fill: rgb(255, 255, 255);">
+                                </path>
+                                <path
+                                    d="M22.6 0H7.4c-3.9 0-7 3.1-7 7s3.1 7 7 7h15.2c3.9 0 7-3.1 7-7s-3.2-7-7-7zm-21 7c0-3.2 2.6-5.8 5.8-5.8h9.9l-3.1 11.6H7.4c-3.2 0-5.8-2.6-5.8-5.8z"
+                                    style="fill-rule: evenodd; clip-rule: evenodd; fill: rgb(0, 102, 255);"></path>
+                                <path
+                                    d="M24.6 4c.2.2.2.6 0 .8L22.5 7l2.2 2.2c.2.2.2.6 0 .8-.2.2-.6.2-.8 0l-2.2-2.2-2.2 2.2c-.2.2-.6.2-.8 0-.2-.2-.2-.6 0-.8L20.8 7l-2.2-2.2c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l2.2 2.2L23.8 4c.2-.2.6-.2.8 0z"
+                                    style="fill: rgb(255, 255, 255);"></path>
+                                <path
+                                    d="M12.7 4.1c.2.2.3.6.1.8L8.6 9.8c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1L5.4 7.7c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0L8 8.6l3.8-4.5c.2-.2.6-.2.9 0z"
+                                    style="fill: rgb(0, 102, 255);"></path>
+                            </svg></div>
+
+                        <div><a href="void">Cookies</a></div>
+                    </div>
+                    <div class="link-language-button ps-4 mt-2">
+                        <button class="btn text-white"><span class="bi bi-globe pe-1"></span>English</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <!--right window html-->
+        <div class="m-2 right">
+            <div class="header d-flex justify-content-between align-items-center m-2">
+                <div class="d-flex align-items-center">
+                    <div>
+                        <button id="hamburger-btn"><span class=" bi bi-list"></span></button>
+                    </div>
+                    <div class="chevron-buttons">
+                        <button class="fs-5 bi bi-chevron-left ms-3 me-1 bg-black"></button>
+                        <button class="fs-5 bi bi-chevron-right "></button>
+                    </div>
+                </div>
+                <div class="sign-buttons">
+                    <a href="./signup.html"><button class="sign-up-btn">Sign up</button></a>
+                    <a href="./sign.html"><button class="login-btn">Log in</button></a>
+                </div>
+            </div>
+
+            <div class="spotify-playlist d-flex flex-column">
+
+                <div class="playlist-card-1 mb-4">
+                    <div>
+                        <h4>Spotify Playlists</h4>
+                    </div>
+
+                    <div class="cardcontainer">
+
+                    </div>
+                </div>
+                
+
+            </div>
+
+          
+
+            <div class="playlist-footer m-2">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex footer-list">
+                        <div class="list">
+                            <ul>
+                                <li>Company</li>
+                                <li><a href="#void">About</a></li>
+                                <li><a href="#void">Jobs</a></li>
+                                <li><a href="#void">For The Record</a></li>
+                            </ul>
+                        </div >
+
+                        <div class="list">
+                            <ul>
+                                <li>Communities</li>
+                                <li><a href="#void">For Artists</a></li>
+                                <li><a href="#void">Developers</a></li>
+                                <li><a href="#void">Advertising</a></li>
+                                <li><a href="#void">Investors</a></li>
+                                <li><a href="#void">Vendors</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="list">
+                            <ul>
+                                <li>Useful links</li>
+                                <li><a href="#void" >Support</a></li>
+                                <li><a href="#void">Free Mobile App</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-buttons">
+                        <button><span class="bi bi-instagram "></span></button>
+                        <button><span class="bi bi-twitter"></span></button>
+                        <button><span class="bi bi-facebook"></span></button>
+                    </div>
+                </div>
+                <hr>
+                <div class="m-2 copyright-footer">
+                    <p>© 2024 Spotify AB</p>
+                </div>
+            </div>
+
+        
+
+            
+
+
+        </div>
+    </div>
+
+
+
+    <!-- footer html-->
+    <div class="footer ms-2 me-2 d-flex justify-content-between align-items-center p-3">
+        <div class="footer-text">
+            <div class="fw-bold">Preview of spotify</div>
+            <div class="fs-6">Signup to get unlimitedsongs and podcasts with occasional ads.No credit card needed.</div>
+        </div>
+        <div class="footer-button">
+           <a href="./signup.html"><button class="fw-bold btn-footer">Sign up free</button></a> 
+        </div>
+
+
+
+        
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="./js/index.js"></script>
+
+
+
+
+</html>
