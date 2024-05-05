@@ -1,4 +1,4 @@
-# music_Playing_website
+# music Playing website
 
 Welcome to my Spotify Music Player Project! This project demonstrates my proficiency in web development, showcasing a music player website inspired by Spotify. The website dynamically fetches music tracks from a songs folder using HTML, CSS, and JavaScript, and integrates Firebase Authentication for user management functionalities like sign-up, login, and logout.
 
